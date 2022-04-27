@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container>* {
+    box-shadow: -1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.header {
+    grid-area: header;
+    background-color: #94123F;
+}
+
+.navbar {
+    grid-area: navbar;
+    background-color: #F5A911;
+}
+
+.articlebar {
+    grid-area: articlebar;
+    background-color: #27F635;
+}
+
+.main2 {
+    grid-area: main2;
+    background-color: #8ED3F2;
+}
+
+.main1 {
+    grid-area: main1;
+    background-color: #D4EC2C;
+}
+
+.main0 {
+    grid-area: main0;
+    background-color: #F23B15;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #203AE2;
+}
+
+.grid-container {
+    display: grid;
+    gap: 15px;
+    grid-template-areas: "header header header" "navbar navbar navbar" "articlebar articlebar articlebar" "main2 main1 main0" "footer footer footer";
+}
+
+@media(min-width: 200px) {
+    .grid-container {
+        grid-template: "header header header" 50px "navbar navbar navbar" 180px "articlebar articlebar articlebar" 50px "main2 main1 main0" 245px "footer footer footer";
+    }
+}
+
+@media (max-width: 600px) {
+    .main2,
+    .main1,
+    .main0 {
+        grid-column: 1 /span 3;
+    }
+    .grid-container {
+        grid-template-rows: repeat(7, 80px);
+    }
+}
